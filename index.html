@@ -3657,16 +3657,17 @@ if(state.timer.running){
   }, 250);
 }
 
-// altijd opnieuw tekenen + vertalen
-renderAll();
-applyLang();
+if (isSetupDone()) {
+  // altijd opnieuw tekenen + vertalen
+  renderAll();
+  applyLang();
 
-// status altijd NA applyLang (juiste taal)
-setStatus(
-  state.timer.running
-    ? "playing"
-    : (state.timer.accMs > 0 ? "paused" : "stopped")
-);
+  // status altijd NA applyLang (juiste taal)
+  setStatus(
+    state.timer.running
+      ? "playing"
+      : (state.timer.accMs > 0 ? "paused" : "stopped")
+  );
 }
 
 document.getElementById("btnTestSetup")?.addEventListener("click", () => {
