@@ -1273,6 +1273,11 @@ input::-webkit-calendar-picker-indicator{ filter: invert(1); }
 
 <script>
 (() => {
+
+window.onerror = function(message, source, lineno, colno, error){
+  alert("JS fout:\n" + message + "\nLijn: " + lineno + ":" + colno);
+  return false;
+};
   /* =========================
      ShiftTap (try Gmail)
      ========================= */
@@ -3669,7 +3674,7 @@ if (isSetupDone()) {
       : (state.timer.accMs > 0 ? "paused" : "stopped")
   );
 }
-
+}
 document.getElementById("btnTestSetup")?.addEventListener("click", () => {
   markSetupDone();
   location.reload();
