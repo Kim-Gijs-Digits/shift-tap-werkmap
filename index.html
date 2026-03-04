@@ -1353,11 +1353,11 @@ async function ensureFirebase(){
    Cloud sync (Google login)
    - Mobile friendly: redirect login
    ========================= */
-const elLoginNote     = document.getElementById("loginNote");
-const btnGoogleLogin  = document.getElementById("btnGoogleLogin");
-const btnGoogleLogout = document.getElementById("btnGoogleLogout");
-const btnCloudPull    = document.getElementById("btnCloudPull");
-const btnCloudPush    = document.getElementById("btnCloudPush");
+const elLoginNote     = document.getElementById("loginNote") || null;
+const btnGoogleLogin  = document.getElementById("btnGoogleLogin") || null;
+const btnGoogleLogout = document.getElementById("btnGoogleLogout") || null;
+const btnCloudPull    = document.getElementById("btnCloudPull") || null;
+const btnCloudPush    = document.getElementById("btnCloudPush") || null;
 
 function setCloudUiEnabled(enabled){
   if(btnGoogleLogin)  btnGoogleLogin.disabled  = !enabled;
