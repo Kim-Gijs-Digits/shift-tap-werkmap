@@ -858,7 +858,9 @@ input::-webkit-calendar-picker-indicator{ filter: invert(1); }
   left: auto;
   right: 0;
 }
-
+.setupHint{
+margin-bottom: 16px;
+}
 </style>
 </head>
 
@@ -3825,10 +3827,10 @@ init();
             id="setupNormHours"
            value="07:30"
            step="60">
-            <div class="setupHint">Voorbeeld: = 07u30 of 08:00</div>
+            <div class="setupHint">Voorbeeld: 07:30 of 08:00</div>
         </div>
-<br>
-<br>
+
+
         <div class="setupField">
           <label for="setupPauseMin">Pauze (minuten)</label>
           <input
