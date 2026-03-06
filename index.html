@@ -2519,9 +2519,17 @@ ${["nl","en","fr","de","pl","es","hu"].map(code => `
 
 function closeAppModal(){
   const overlay = document.getElementById("appModalOverlay");
+  const btnOk = document.getElementById("appModalOk");
+  const btnCancel = document.getElementById("appModalCancel");
+
   if(!overlay) return;
+
   overlay.classList.remove("show");
-      overlay.setAttribute("aria-hidden","true");
+  overlay.setAttribute("aria-hidden","true");
+
+  // knoppen terug normaal zetten
+  if(btnOk) btnOk.style.display = "inline-flex";
+  if(btnCancel) btnCancel.style.display = "inline-flex";
 }
 
 document.getElementById("btnLangOpen")?.addEventListener("click", openLangModal);
