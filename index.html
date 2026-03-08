@@ -1653,7 +1653,7 @@ nl: {
   btn_delete: "Verwijderen",
   btn_add_manual: "Toevoegen",
   no_entries: "Geen ingevulde data gevonden.",
-
+  week: "Week",
   lbl_date: "Datum",
   lbl_type: "Type",
   lbl_start: "Start (HH:MM)",
@@ -1800,7 +1800,7 @@ it: {
   btn_delete: "Elimina",
   btn_add_manual: "Aggiungi",
   no_entries: "Nessun dato inserito.",
-
+  week: "Settimana",
   lbl_date: "Data",
   lbl_type: "Tipo",
   lbl_start: "Inizio (HH:MM)",
@@ -1963,7 +1963,7 @@ en: {
   modal_edit_title: "Edit entry",
   modal_hint: "Forgot to clock out? Just add the correct times.",
   history_hint: "Forgot to clock out?<br>Add it manually.",
-
+  week: "Week",
   lbl_date: "Date",
   lbl_type: "Type",
   lbl_start: "Start (HH:MM)",
@@ -2098,7 +2098,7 @@ hu: {
   btn_delete: "Törlés",
   btn_add_manual: "Hozzáadás",
   no_entries: "Nem található adat.",
-
+  week: "Hét",
   lbl_date: "Dátum",
   lbl_type: "Típus",
   lbl_start: "Kezdés (ÓÓ:PP)",
@@ -2245,7 +2245,7 @@ de: {
   btn_delete: "Löschen",
   btn_add_manual: "Hinzufügen",
   no_entries: "Keine Daten gefunden.",
-
+  week: "Woche",
   lbl_date: "Datum",
   lbl_type: "Typ",
   lbl_start: "Start (HH:MM)",
@@ -2381,7 +2381,7 @@ pl: {
   btn_delete: "Usuń",
   btn_add_manual: "Dodaj",
   no_entries: "Nie znaleziono danych.",
-
+  week: "Tydzień",
   lbl_date: "Data",
   lbl_type: "Typ",
   lbl_start: "Start (GG:MM)",
@@ -2528,7 +2528,7 @@ es: {
   btn_delete: "Eliminar",
   btn_add_manual: "Añadir",
   no_entries: "No se encontraron datos.",
-
+  week: "Semana",
   lbl_date: "Fecha",
   lbl_type: "Tipo",
   lbl_start: "Inicio (HH:MM)",
@@ -2690,7 +2690,7 @@ fr: {
   modal_edit_title: "Modifier l’entrée",
   modal_hint: "Tu as oublié de pointer ? Ajoute simplement les bonnes heures.",
   history_hint: "Tu as oublié de pointer ?<br>Ajoute-le manuellement.",
-
+  week: "Semaine",
   lbl_date: "Date",
   lbl_type: "Type",
   lbl_start: "Début (HH:MM)",
@@ -4283,7 +4283,7 @@ function renderHistory(){
     head.style.width = "100%";
     head.style.marginBottom = "10px";
     head.innerHTML = `
-      <span>Week ${group.week}</span>
+<span>${t("week")} ${group.week}</span>
       <span style="opacity:.75;">${group.items.length}</span>
     `;
 
