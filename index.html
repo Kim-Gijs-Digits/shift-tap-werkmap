@@ -311,7 +311,7 @@ body{
 .toast{
   position:fixed;
   left:50%;
-  bottom:18px;
+  top:90px;
   transform:translateX(-50%) translateY(20px);
   opacity:0;
   pointer-events:none;
@@ -324,12 +324,25 @@ body{
   font-weight:950;
   z-index:120;
   box-shadow:0 14px 40px rgba(0,0,0,.45);
+  max-width:90%;
+  text-align:center;
 }
 .toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
-.toast.ok{background:rgba(50,211,110,.20)}
-.toast.warn{background:rgba(255,155,0,.18)}
-.toast.err{background:rgba(255,91,91,.18)}
 
+.toast.ok{
+  background:rgba(50,211,110,.90);
+  color:#000;
+}
+
+.toast.warn{
+  background:rgba(255,155,0,.95);
+  color:#000;
+}
+
+.toast.err{
+  background:rgba(255,91,91,.90);
+  color:#fff;
+}
 /* =========================================
    MODALS
    ========================================= */
@@ -4044,11 +4057,10 @@ function openModal(mode, entry=null){
   if(mode === "edit" && entry?.date){
     const weekInfo = getWeekInfo(entry.date);
     if(isWeekLocked(weekInfo.key)){
-      showToast("Week is vergrendeld");
+      showToast(t("week_locked"));
       return;
     }
   }
-
   editingId = entry ? entry.id : null;
 
   if(modalTitle){
@@ -4125,7 +4137,7 @@ function saveModal(){
   if(date){
     const weekInfo = getWeekInfo(date);
     if(isWeekLocked(weekInfo.key)){
-      showToast("Week is vergrendeld");
+      showToast(t("week_locked"));
       return;
     }
   }
