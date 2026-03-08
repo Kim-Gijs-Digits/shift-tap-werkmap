@@ -4219,20 +4219,28 @@ function entryTitle(e){
 function entrySubtitle(e){
   const noteLine = e.note ? `<br><br><span class="noteLine">📝 ${e.note}</span>` : "";
 
+  const vMins = (Array.isArray(state.verrekeningen) ? state.verrekeningen : [])
+    .filter(v => !v.deletedAt && v.date === e.date)
+    .reduce((s,x)=> s + (x.minutes||0), 0);
+
+  const verrekenLine = vMins > 0
+    ? `<br><br><span class="noteLine">🟢 ${t("reconciled")}: ${formatHM(vMins)}</span>`
+    : "";
+
   if(e.type==="Recup"){
-    return `${t("recup").toUpperCase()}<br>${t("recup_line")} (${formatHM(e.netMin||0)})${noteLine}`;
+    return `${t("recup").toUpperCase()}<br>${t("recup_line")} (${formatHM(e.netMin||0)})${noteLine}${verrekenLine}`;
   }
 
   if(e.type==="Ziekte" || e.type==="Vakantie" || e.type==="Feestdag"){
     const map = { "Ziekte":"sick", "Vakantie":"vacation", "Feestdag":"holiday" };
     const key = map[e.type];
-    return `${(key ? t(key) : e.type).toUpperCase()}${noteLine}`;
+    return `${(key ? t(key) : e.type).toUpperCase()}${noteLine}${verrekenLine}`;
   }
 
   return `${t("work_label")}<br>
 ${e.start || "-"}-${e.end || "-"}<br>
 ${t("net_line")} ${formatHM(e.netMin||0)}<br>
-${t("pause_line")} ${e.pauseMin||0} ${t("minutes")}${noteLine}`;
+${t("pause_line")} ${e.pauseMin||0} ${t("minutes")}${noteLine}${verrekenLine}`;
 }
 
 function entryChip(e){
