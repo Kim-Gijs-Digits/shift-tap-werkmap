@@ -932,27 +932,28 @@ margin-bottom: 16px;
 }
 .h2Row{
   position:relative;
-}
 
+}
 .lockLegend{
-  position:absolute;
-  right:12px;
-  top:38px;
   display:flex;
   align-items:center;
   gap:6px;
+  margin-left:auto;
 }
 
 .lockMini{
   width:18px;
   height:18px;
 }
+
 .historyActions{
   display:flex;
   gap:10px;
   align-items:center;
-  flex-wrap:wrap;
   margin-top:10px;
+}
+#bubbleWeekLock{
+  transform:translateX(-40px);
 }
 </style>
 </head>
@@ -1853,7 +1854,32 @@ nl: {
   recup_info: "Gebruik Recup wanneer je een volledige dag compenseert met opgebouwde overuren. Deze dag wordt van je overurensaldo afgetrokken.",
   setup_fill_fields: "Vul beide velden correct in.",
   setup_set_normday: "Stel eerst je normale werkdag in.",
-  week_lock_info: "Groen = open.<br>Rood = vergrendeld.<br>Verwijderen en bewerken zijn afgeschermd.<br>Tik op het icoon om te ontgrendelen."
+  week_lock_info: "Groen = open.<br>Rood = vergrendeld.<br>Verwijderen en bewerken zijn afgeschermd.<br>Tik op het icoon om te ontgrendelen.",
+  // --- Cloud status / backup extra ---
+  cloud_not_configured: "Cloud niet geconfigureerd.",
+  cloud_not_configured_status: "Cloud: niet geconfigureerd.",
+  firebase_not_configured: "Nog niet mogelijk (Firebase niet geconfigureerd).",
+
+  login_required_google: "Log eerst in met Google.",
+  login_failed: "Inloggen mislukt",
+  logout_failed: "Uitloggen mislukt",
+  logged_out: "Uitgelogd.",
+
+  cloud_loaded: "Cloud geladen",
+  cloud_updated: "Cloud bijgewerkt",
+
+  cloud_backup_success: "Backup naar cloud gelukt",
+  cloud_upload_failed: "Cloud upload mislukt",
+
+  cloud_download_failed: "Cloud download mislukt",
+  cloud_backup_invalid: "Cloud-backup is ongeldig.",
+  cloud_backup_not_found: "Geen cloud-backup gevonden.",
+
+  cloud_restore_confirm: "Cloud → toestel: dit overschrijft je data op dit toestel. Doen?",
+  cloud_to_device_success: "Cloud → toestel gelukt",
+
+  download_running: "Download bezig...",
+  upload_running: "Upload bezig..."
 
 },
 
@@ -2003,7 +2029,35 @@ it: {
 
   setup_fill_fields: "Compila correttamente entrambi i campi.",
   setup_set_normday: "Imposta prima la tua giornata lavorativa normale.",
-  week_lock_info: "Verde = aperto.<br>Rosso = bloccato.<br>Eliminazione e modifica disabilitate.<br>Tocca l’icona per sbloccare."
+  week_lock_info: "Verde = aperto.<br>Rosso = bloccato.<br>Eliminazione e modifica disabilitate.<br>Tocca l’icona per sbloccare.",
+  // --- Cloud status / backup extra ---
+  cloud_not_configured: "Cloud non configurato.",
+  cloud_not_configured_status: "Cloud: non configurato.",
+  firebase_not_configured: "Non ancora disponibile (Firebase non configurato).",
+
+  login_required_google: "Accedi prima con Google.",
+  login_failed: "Accesso non riuscito",
+  logged_out: "Disconnesso.",
+  logout_failed: "Disconnessione non riuscita",
+
+  logged_in: "Accesso effettuato",
+  not_logged_in: "Non connesso.",
+
+  cloud_loaded: "Cloud caricato",
+  cloud_updated: "Cloud aggiornato",
+
+  cloud_backup_success: "Backup nel cloud riuscito",
+  cloud_upload_failed: "Caricamento cloud non riuscito",
+
+  cloud_download_failed: "Download cloud non riuscito",
+  cloud_backup_invalid: "Il backup cloud non è valido.",
+  cloud_backup_not_found: "Nessun backup cloud trovato.",
+
+  cloud_restore_confirm: "Cloud → dispositivo: questo sovrascriverà i dati su questo dispositivo. Continuare?",
+  cloud_to_device_success: "Cloud → dispositivo completato",
+
+  download_running: "Download in corso...",
+  upload_running: "Caricamento in corso..."
 },
 
 en: {
@@ -2155,7 +2209,35 @@ en: {
   recup_info: "Use Comp Day when you take a full day off using accumulated overtime. This day will be deducted from your overtime balance.",
   setup_fill_fields: "Fill in both fields correctly.",
  setup_set_normday: "Set your normal workday first.",
- week_lock_info: "Green = open.<br>Red = locked.<br>Deleting and editing are disabled.<br>Tap the icon to unlock."
+ week_lock_info: "Green = open.<br>Red = locked.<br>Deleting and editing are disabled.<br>Tap the icon to unlock.",
+ // --- Cloud status / backup extra ---
+  cloud_not_configured: "Cloud not configured.",
+  cloud_not_configured_status: "Cloud: not configured.",
+  firebase_not_configured: "Not available yet (Firebase not configured).",
+
+  login_required_google: "Please log in with Google first.",
+  login_failed: "Login failed",
+  logged_out: "Logged out.",
+  logout_failed: "Logout failed",
+
+  logged_in: "Logged in",
+  not_logged_in: "Not logged in.",
+
+  cloud_loaded: "Cloud loaded",
+  cloud_updated: "Cloud updated",
+
+  cloud_backup_success: "Backup to cloud successful",
+  cloud_upload_failed: "Cloud upload failed",
+
+  cloud_download_failed: "Cloud download failed",
+  cloud_backup_invalid: "Cloud backup is invalid.",
+  cloud_backup_not_found: "No cloud backup found.",
+
+  cloud_restore_confirm: "Cloud → device: this will overwrite the data on this device. Continue?",
+  cloud_to_device_success: "Cloud → device successful",
+
+  download_running: "Downloading...",
+  upload_running: "Uploading..."
  
 },
 
@@ -2305,7 +2387,35 @@ hu: {
   recup_info: "Használd a Szabadnap opciót amikor egy teljes napot veszel ki a felhalmozott túlórákból. Ez levonódik a túlóra egyenlegből.",
   setup_fill_fields: "Töltse ki mindkét mezőt helyesen.",
 setup_set_normday: "Először állítsa be a normál munkanapot.",
-week_lock_info: "Zöld = nyitva.<br>Piros = zárolva.<br>Törlés és szerkesztés letiltva.<br>Érintsd meg az ikont a feloldáshoz."
+week_lock_info: "Zöld = nyitva.<br>Piros = zárolva.<br>Törlés és szerkesztés letiltva.<br>Érintsd meg az ikont a feloldáshoz.",
+// --- Cloud status / backup extra ---
+  cloud_not_configured: "A felhő nincs beállítva.",
+  cloud_not_configured_status: "Felhő: nincs beállítva.",
+  firebase_not_configured: "Még nem érhető el (a Firebase nincs beállítva).",
+
+  login_required_google: "Először jelentkezz be Google-lel.",
+  login_failed: "Bejelentkezés sikertelen",
+  logged_out: "Kijelentkezve.",
+  logout_failed: "Kijelentkezés sikertelen",
+
+  logged_in: "Bejelentkezve",
+  not_logged_in: "Nincs bejelentkezve.",
+
+  cloud_loaded: "Felhő betöltve",
+  cloud_updated: "Felhő frissítve",
+
+  cloud_backup_success: "Felhőmentés sikeres",
+  cloud_upload_failed: "Felhő feltöltés sikertelen",
+
+  cloud_download_failed: "A felhő letöltése sikertelen",
+  cloud_backup_invalid: "A felhőmentés érvénytelen.",
+  cloud_backup_not_found: "Nem található felhőmentés.",
+
+  cloud_restore_confirm: "Felhő → eszköz: ez felülírja az adatokat ezen az eszközön. Folytatod?",
+  cloud_to_device_success: "Felhő → eszköz sikeres",
+
+  download_running: "Letöltés folyamatban...",
+  upload_running: "Feltöltés folyamatban..."
 
 },
 
@@ -2443,7 +2553,35 @@ de: {
   recup_info: "Verwende Freizeitausgleich wenn du einen ganzen Tag mit angesammelten Überstunden kompensierst. Dieser Tag wird vom Überstunden-Saldo abgezogen.",
   setup_fill_fields: "Füllen Sie beide Felder korrekt aus.",
 setup_set_normday: "Stellen Sie zuerst Ihren normalen Arbeitstag ein.",
-week_lock_info: "Grün = offen.<br>Rot = gesperrt.<br>Löschen und Bearbeiten sind deaktiviert.<br>Tippe auf das Symbol zum Entsperren."
+week_lock_info: "Grün = offen.<br>Rot = gesperrt.<br>Löschen und Bearbeiten sind deaktiviert.<br>Tippe auf das Symbol zum Entsperren.",
+// --- Cloud status / backup extra ---
+  cloud_not_configured: "Cloud nicht konfiguriert.",
+  cloud_not_configured_status: "Cloud: nicht konfiguriert.",
+  firebase_not_configured: "Noch nicht verfügbar (Firebase nicht konfiguriert).",
+
+  login_required_google: "Bitte zuerst mit Google anmelden.",
+  login_failed: "Anmeldung fehlgeschlagen",
+  logged_out: "Abgemeldet.",
+  logout_failed: "Abmeldung fehlgeschlagen",
+
+  logged_in: "Angemeldet",
+  not_logged_in: "Nicht angemeldet.",
+
+  cloud_loaded: "Cloud geladen",
+  cloud_updated: "Cloud aktualisiert",
+
+  cloud_backup_success: "Cloud-Backup erfolgreich",
+  cloud_upload_failed: "Cloud-Upload fehlgeschlagen",
+
+  cloud_download_failed: "Cloud-Download fehlgeschlagen",
+  cloud_backup_invalid: "Cloud-Backup ist ungültig.",
+  cloud_backup_not_found: "Kein Cloud-Backup gefunden.",
+
+  cloud_restore_confirm: "Cloud → Gerät: Dies überschreibt die Daten auf diesem Gerät. Fortfahren?",
+  cloud_to_device_success: "Cloud → Gerät erfolgreich",
+
+  download_running: "Download läuft...",
+  upload_running: "Upload läuft..."
 
 },
 
@@ -2593,7 +2731,35 @@ pl: {
   recup_info: "Użyj Odbioru gdy bierzesz cały dzień wolny w ramach zgromadzonych nadgodzin. Ten dzień zostanie odjęty od salda nadgodzin.",
   setup_fill_fields: "Wypełnij poprawnie oba pola.",
 setup_set_normday: "Najpierw ustaw normalny dzień pracy.",
-week_lock_info: "Zielony = otwarte.<br>Czerwony = zablokowane.<br>Usuwanie i edycja są zablokowane.<br>Dotknij ikonę, aby odblokować."
+week_lock_info: "Zielony = otwarte.<br>Czerwony = zablokowane.<br>Usuwanie i edycja są zablokowane.<br>Dotknij ikonę, aby odblokować.",
+// --- Cloud status / backup extra ---
+  cloud_not_configured: "Chmura nie jest skonfigurowana.",
+  cloud_not_configured_status: "Chmura: brak konfiguracji.",
+  firebase_not_configured: "Jeszcze niedostępne (Firebase nie jest skonfigurowany).",
+
+  login_required_google: "Najpierw zaloguj się przez Google.",
+  login_failed: "Logowanie nie powiodło się",
+  logged_out: "Wylogowano.",
+  logout_failed: "Wylogowanie nie powiodło się",
+
+  logged_in: "Zalogowano",
+  not_logged_in: "Nie zalogowano.",
+
+  cloud_loaded: "Chmura załadowana",
+  cloud_updated: "Chmura zaktualizowana",
+
+  cloud_backup_success: "Kopia zapasowa w chmurze utworzona",
+  cloud_upload_failed: "Przesyłanie do chmury nie powiodło się",
+
+  cloud_download_failed: "Pobieranie z chmury nie powiodło się",
+  cloud_backup_invalid: "Kopia zapasowa w chmurze jest nieprawidłowa.",
+  cloud_backup_not_found: "Nie znaleziono kopii zapasowej w chmurze.",
+
+  cloud_restore_confirm: "Chmura → urządzenie: to nadpisze dane na tym urządzeniu. Kontynuować?",
+  cloud_to_device_success: "Chmura → urządzenie zakończone sukcesem",
+
+  download_running: "Trwa pobieranie...",
+  upload_running: "Trwa przesyłanie..."
 },
 
 es: {
@@ -2742,7 +2908,35 @@ es: {
   recup_info: "Usa Recuperación cuando tomes un día completo compensado con horas extra acumuladas. Este día se descontará de tu saldo de horas extra.",
   setup_fill_fields: "Complete correctamente ambos campos.",
 setup_set_normday: "Primero configure su jornada laboral normal.",
-week_lock_info: "Verde = abierto.<br>Rojo = bloqueado.<br>Eliminar y editar están desactivados.<br>Toca el icono para desbloquear."
+week_lock_info: "Verde = abierto.<br>Rojo = bloqueado.<br>Eliminar y editar están desactivados.<br>Toca el icono para desbloquear.",
+// --- Cloud status / backup extra ---
+  cloud_not_configured: "La nube no está configurada.",
+  cloud_not_configured_status: "Nube: no configurada.",
+  firebase_not_configured: "Aún no disponible (Firebase no configurado).",
+
+  login_required_google: "Primero inicia sesión con Google.",
+  login_failed: "Error al iniciar sesión",
+  logged_out: "Sesión cerrada.",
+  logout_failed: "Error al cerrar sesión",
+
+  logged_in: "Conectado",
+  not_logged_in: "No conectado.",
+
+  cloud_loaded: "Nube cargada",
+  cloud_updated: "Nube actualizada",
+
+  cloud_backup_success: "Copia en la nube creada",
+  cloud_upload_failed: "Error al subir a la nube",
+
+  cloud_download_failed: "Error al descargar desde la nube",
+  cloud_backup_invalid: "La copia en la nube no es válida.",
+  cloud_backup_not_found: "No se encontró ninguna copia en la nube.",
+
+  cloud_restore_confirm: "Nube → dispositivo: esto sobrescribirá los datos de este dispositivo. ¿Continuar?",
+  cloud_to_device_success: "Nube → dispositivo completado",
+
+  download_running: "Descargando...",
+  upload_running: "Subiendo..."
 },
 
 fr: {
@@ -2894,10 +3088,60 @@ fr: {
   recup_info: "Utilise Jour de récup lorsque tu prends une journée complète en compensation d’heures supplémentaires. Cette journée sera déduite de ton solde d’heures supplémentaires.",
   setup_fill_fields: "Remplissez correctement les deux champs.",
 setup_set_normday: "Définissez d'abord votre journée de travail normale.",
-week_lock_info: "Vert = ouvert.<br>Rouge = verrouillé.<br>Suppression et modification désactivées.<br>Appuyez sur l’icône pour déverrouiller."
+week_lock_info: "Vert = ouvert.<br>Rouge = verrouillé.<br>Suppression et modification désactivées.<br>Appuyez sur l’icône pour déverrouiller.",
+// --- Cloud status / backup extra ---
+  cloud_not_configured: "Cloud non configuré.",
+  cloud_not_configured_status: "Cloud : non configuré.",
+  firebase_not_configured: "Pas encore disponible (Firebase non configuré).",
+
+  login_required_google: "Connecte-toi d’abord avec Google.",
+  login_failed: "Échec de la connexion",
+  logged_out: "Déconnecté.",
+  logout_failed: "Échec de la déconnexion",
+
+  logged_in: "Connecté",
+  not_logged_in: "Non connecté.",
+
+  cloud_loaded: "Cloud chargé",
+  cloud_updated: "Cloud mis à jour",
+
+  cloud_backup_success: "Sauvegarde cloud réussie",
+  cloud_upload_failed: "Échec de l’envoi vers le cloud",
+
+  cloud_download_failed: "Échec du téléchargement depuis le cloud",
+  cloud_backup_invalid: "La sauvegarde cloud est invalide.",
+  cloud_backup_not_found: "Aucune sauvegarde cloud trouvée.",
+
+  cloud_restore_confirm: "Cloud → appareil : ceci écrasera les données sur cet appareil. Continuer ?",
+  cloud_to_device_success: "Cloud → appareil réussi",
+
+  download_running: "Téléchargement en cours...",
+  upload_running: "Envoi en cours..."
 
 }
   };
+  function checkMissingTranslations(){
+  const base = LANG.nl;   // NL is de master
+  const langs = Object.keys(LANG);
+
+  langs.forEach(lang=>{
+    if(lang === "nl") return;
+
+    const missing = [];
+
+    Object.keys(base).forEach(key=>{
+      if(!(key in LANG[lang])){
+        missing.push(key);
+      }
+    });
+
+    if(missing.length){
+      console.warn("❌ Missing translations in", lang, ":", missing);
+    }else{
+      console.log("✅", lang, "OK");
+    }
+  });
+}
 
 /* =========================
    i18n engine
@@ -4501,10 +4745,10 @@ lock?.addEventListener("click",(ev)=>{
       div.querySelector('[data-act="edit"]')?.addEventListener("click", ()=>{
   const weekInfo = getWeekInfo(e.date);
 
-  if(isWeekLocked(weekInfo.key)){
-    showToast("Week is vergrendeld");
-    return;
-  }
+if(isWeekLocked(weekInfo.key)){
+  showToast(t("week_locked"));
+  return;
+}
 
   openModal("edit", e);
 });
@@ -4656,7 +4900,7 @@ function cloudDocRef(uid){
 /* ---------- Redirect result (mobiel/PWA) ---------- */
 async function handleRedirectLoginResult(){
   if(!(await ensureFirebase())){
-    setCloudStatus("Cloud: niet geconfigureerd.");
+    setCloudStatus(t("cloud_not_configured_status"));
     setCloudUiEnabled(false);
     return;
   }
@@ -4685,89 +4929,89 @@ async function handleRedirectLoginResult(){
 /* ---------- Login / Logout ---------- */
 async function loginGoogle(){
   if(!(await ensureFirebase())){
-    showToast("Cloud niet geconfigureerd.", "warn");
+    showToast(t("cloud_not_configured"), "warn");
     return;
   }
   try{
-  const provider = new firebase.auth.GoogleAuthProvider();
-  await fbAuth.signInWithPopup(provider);
-}catch(e){
-  // Als popup geblokkeerd is, proberen we toch redirect (alleen dan)
-  if (e && (e.code === "auth/popup-blocked" || e.code === "auth/popup-closed-by-user")) {
     const provider = new firebase.auth.GoogleAuthProvider();
-    await fbAuth.signInWithRedirect(provider);
-    return;
+    await fbAuth.signInWithPopup(provider);
+  }catch(e){
+    if (e && (e.code === "auth/popup-blocked" || e.code === "auth/popup-closed-by-user")) {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      await fbAuth.signInWithRedirect(provider);
+      return;
+    }
+    console.error("loginGoogle:", e);
+    showToast("❌ " + t("login_failed"), "warn");
   }
-  console.error("loginGoogle:", e);
-  showToast("❌ Inloggen mislukt", "warn");
-}
 }
 
 async function logoutGoogle(){
   if(!(await ensureFirebase())) return;
   try{
     await fbAuth.signOut();
-    showToast("Uitgelogd.", "ok");
+    showToast(t("logged_out"), "ok");
   }catch(e){
     console.error("logoutGoogle:", e);
-    showToast("❌ Uitloggen mislukt", "warn");
+    showToast("❌ " + t("logout_failed"), "warn");
   }
 }
 
 /* ---------- Cloud push / pull ---------- */
 async function cloudPush(){
   if(!(await ensureFirebase())){
-    showToast("Cloud niet geconfigureerd.", "warn");
+    showToast(t("cloud_not_configured"), "warn");
     return;
   }
   const u = currentUser();
   if(!u){
-    showToast("Log eerst in met Google.", "warn");
+    showToast(t("login_required_google"), "warn");
     return;
   }
 
   try{
-    showToast("⬆️ Upload bezig...", "ok");
+    showToast("⬆️ " + t("upload_running"), "ok");
     const payload = backupObject();
     await cloudDocRef(u.uid).set({
       payload,
       updatedAt: firebase.firestore.FieldValue.serverTimestamp()
     }, { merge:true });
 
-    setCloudStatus(`✅ Cloud bijgewerkt (${u.email || "Google"})`);
-    showToast("✅ Backup naar cloud gelukt", "ok");
-  }catch(err){
-    console.error(err);
-    showToast("❌ Cloud upload mislukt", "warn");
+    setCloudStatus(`✅ ${t("cloud_updated")} (${u.email || "Google"})`);
+showToast("✅ " + t("cloud_backup_success"), "ok");
+}catch(err){
+  console.error(err);
+  showToast("❌ " + t("cloud_upload_failed"), "warn");
   }
 }
 
 async function cloudPull(){
   if(!(await ensureFirebase())){
-    showToast("Cloud niet geconfigureerd.", "warn");
+    showToast(t("cloud_not_configured"), "warn");
     return;
   }
   const u = currentUser();
   if(!u){
-    showToast("Log eerst in met Google.", "warn");
+    showToast(t("login_required_google"), "warn");
     return;
   }
 
-  try{
-    showToast("⬇️ Download bezig...", "ok");
-    const snap = await cloudDocRef(u.uid).get();
-    if(!snap.exists){
-      showToast("Geen cloud-backup gevonden.", "warn");
-      return;
-    }
+
+try{
+  showToast("⬇️ " + t("download_running"), "ok");
+  const snap = await cloudDocRef(u.uid).get();
+  if(!snap.exists){
+    showToast(t("cloud_backup_not_found"), "warn");
+    return;
+  }
 
     const payload = snap.data()?.payload || null;
-    if(!payload?.state){
-      showToast("Cloud-backup is ongeldig.", "warn");
-      return;
-    }
+if(!payload?.state){
+  showToast(t("cloud_backup_invalid"), "warn");
+  return;
+}
 
-    openConfirm("Cloud → toestel: dit overschrijft je data op dit toestel. Doen?", ()=>{
+    openConfirm(t("cloud_restore_confirm"), ()=>{
       state = payload.state;
       meta  = payload.meta || meta;
 
@@ -4783,12 +5027,12 @@ async function cloudPull(){
       saveMeta();
       renderAll();
 
-      setCloudStatus(`⬇️ Cloud geladen (${u.email || "Google"})`);
-      showToast("✅ Cloud → toestel gelukt", "ok");
+      setCloudStatus(`⬇️ ${t("cloud_loaded")} (${u.email || "Google"})`);
+showToast("✅ " + t("cloud_to_device_success"), "ok");
     });
   }catch(err){
     console.error(err);
-    showToast("❌ Cloud download mislukt", "warn");
+    showToast("❌ " + t("cloud_download_failed"), "warn");
   }
 }
 async function maybeAutoBackupOnOpen(){
@@ -4827,32 +5071,30 @@ async function wireCloudAuthUI(){
   setCloudUiEnabled(false);
 
   if(!(await ensureFirebase())){
-    setCloudStatus("Cloud: niet geconfigureerd.");
-    if(elLoginNote) elLoginNote.textContent = "Nog niet mogelijk (Firebase niet geconfigureerd).";
+    setCloudStatus(t("cloud_not_configured_status"));
+    if(elLoginNote) elLoginNote.textContent = t("firebase_not_configured");
     return;
   }
 
   // Vanaf hier: Firebase OK
   setCloudUiEnabled(true);
-  setCloudStatus("Niet ingelogd.");
+  setCloudStatus(t("not_logged_in"));
 
   // 1x listener (blijft actief)
   fbAuth.onAuthStateChanged((u)=>{
     setLoginUi(u);
 
     if(u){
-      setCloudStatus(`✅ Ingelogd: ${u.email || u.displayName || "Google"}`);
-      // login knop verbergen gebeurt al in setLoginUi
+      setCloudStatus(`✅ ${t("logged_in")}: ${u.email || u.displayName || "Google"}`);
       if(btnCloudPull) btnCloudPull.disabled = false;
       if(btnCloudPush) btnCloudPush.disabled = false;
     }else{
-      setCloudStatus("Niet ingelogd.");
+      setCloudStatus(t("not_logged_in"));
       if(btnCloudPull) btnCloudPull.disabled = true;
       if(btnCloudPush) btnCloudPush.disabled = true;
     }
   });
 }
-
 
 /* =========================
    Settings
@@ -5073,11 +5315,11 @@ dayEdit?.addEventListener("click", () => {
   const ymdStr = dayTitle?.dataset?.ymd;
   if(!ymdStr) return;
 
-  const weekInfo = getWeekInfo(ymdStr);
-  if(isWeekLocked(weekInfo.key)){
-    showToast("Week is vergrendeld");
-    return;
-  }
+const weekInfo = getWeekInfo(ymdStr);
+if(isWeekLocked(weekInfo.key)){
+  showToast(t("week_locked"));
+  return;
+}
 
   const e = entryForDate(ymdStr);
   if(!e) return;
@@ -5240,6 +5482,10 @@ document.getElementById("btnLangPl")?.addEventListener("click", () => openSetupA
 document.getElementById("btnLangEs")?.addEventListener("click", () => openSetupAfterLang("es"));
 document.getElementById("btnLangHu")?.addEventListener("click", () => openSetupAfterLang("hu"));
 document.getElementById("btnLangIt")?.addEventListener("click", () => openSetupAfterLang("it"));
+
+console.log("check start");
+checkMissingTranslations();
+console.log("check done");
 
 init();
 });
