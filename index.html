@@ -1290,6 +1290,16 @@ button:active,
 
     <div class="sp"></div>
 
+    <!-- Notificaties -->
+<label>Meldingen</label>
+<label style="display:flex; align-items:center; gap:10px;">
+  <input type="checkbox" id="chkNotifEnabled">
+  Notificaties inschakelen
+</label>
+
+<div class="sp"></div>
+
+
 <label id="lblEmployeeName" data-i18n="employee_name_label">
   Naam werknemer
 </label>
@@ -5620,11 +5630,23 @@ document.getElementById("btnLangIt")?.addEventListener("click", () => openSetupA
 
 // checkMissingTranslations();
 
-
 init();
 
 if (window.ShiftTapNotifications) {
   ShiftTapNotifications.init();
+
+  const chkNotif = document.getElementById("chkNotifEnabled");
+
+  if (chkNotif) {
+    chkNotif.checked = ShiftTapNotifications.getSettings().enabled;
+
+    chkNotif.addEventListener("change", () => {
+      const next = ShiftTapNotifications.getSettings();
+      next.enabled = chkNotif.checked;
+      ShiftTapNotifications.setSettings(next);
+      console.log("Notificaties staan nu:", chkNotif.checked);
+    });
+  }
 }
 
 });
@@ -5633,6 +5655,7 @@ if (window.ShiftTapNotifications) {
 
 
 <!-- ===== PDF EXPORT DIALOG ===== -->
+
 <dialog id="pdfDialog" class="pdfDialog">
   <div class="pdfBox">
     <h3 data-i18n="pdf_title">PDF export</h3>
