@@ -176,10 +176,14 @@ async function saveMessagingToken(token) {
     return false;
   }
 }
-  async function initNotifications() {
-    initFirebaseMessaging();
+ async function initNotifications() {
+  if (typeof window.ensureFirebase === "function") {
+    await window.ensureFirebase();
+  }
 
-    const settings = getNotifSettings();
+  initFirebaseMessaging();
+
+  const settings = getNotifSettings();
     console.log("Shift-Tap notifications init", settings);
 
     if (!settings.enabled) {
@@ -204,6 +208,7 @@ async function saveMessagingToken(token) {
       console.warn("Geen messaging token beschikbaar.");
       return;
     }
+    
 
 await saveMessagingToken(token);    
 
